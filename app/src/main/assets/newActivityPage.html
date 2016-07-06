@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<!--
+  ~    Copyright 2016 ifarseer
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AndroidJSSDK</title>
+  <meta name="author" content="ifarseer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1, target-densitydpi=medium-dpi, user-scalable=no">
+  <meta property="og:site_name" content="AndroidJSSDK"/>
+  <style>
+      .entry{
+          -webkit-padding-start: 30px;
+      }
+      .entry li {
+          line-height: 29px;
+          margin-left: -10px;
+      }
+      .entry li div{
+          margin-right: 10px;
+          padding-left: 8px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          background: #666666;
+          color: white;
+          word-break: break-all;
+          -ms-word-wrap: break-word;
+          word-wrap: break-word;
+          line-height: 15px;
+          font-size: 10pt;
+      }
+      .entry li button{
+          margin-top: 5px;
+          width: 60px;
+          height: 35px;
+          color: #111111;
+      }
+  </style>
+</head>
+
+<script>
+
+
+</script>
+
+<body>
+<div class="blog-header">
+  <h3>Activity方法打开的新页面 ---> Common模块 可用接口列表测试</h3>
+</div>
+<ul class="entry">
+
+    <li>
+        Toast提示<br/>
+        代码：<br/>
+        <div>
+            ITOMIX.Common.toast(JSON.stringify({'content':'Activity方法打开的新页面'}), function(params){});
+        </div>
+        <button onclick="ITOMIX.Common.toast(JSON.stringify({'content':'Activity方法打开的新页面'}), function(params){});">测试</button>
+    </li>
+
+    <br/>
+
+
+    <br/>
+    <li>
+        关闭当前页面<br/>
+        代码：<br/>
+        <div>
+            ITOMIX.Common.closePage(JSON.stringify({}), function(){});
+        </div>
+        <button onclick="ITOMIX.Common.closePage(JSON.stringify({}), function(){});">测试</button>
+    </li>
+
+    <br/>
+
+</ul>
+</body>
+</html>
