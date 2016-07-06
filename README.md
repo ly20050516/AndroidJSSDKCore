@@ -16,8 +16,11 @@ AndroidJSSDKCore是在Android平台上native与js交互的通讯协议库。
 * callback是native回调js方法,支持匿名js方法,方法原型为function(params){}, 参数params是native向js传递的数据,数据格式为json。
 
 例如:
-* com.farseer.Common.toast(JSON.stringify({'content':'toast提示'}), function(params){});
-* com.farseer.Dialog.normalDialog(JSON.stringify({'title': 'title','content': 'content','positiveText': 'Sure','negativeText': 'Cancel'}), function(params){com.farseer.Common.toast(JSON.stringify({'content':params}), function(){});});
-
+```java
+com.farseer.Common.toast(JSON.stringify({'content':'toast提示'}), function(params){});
+```
+```java
+com.farseer.Dialog.normalDialog(JSON.stringify({'title': 'title','content': 'content','positiveText': 'Sure','negativeText': 'Cancel'}), function(params){com.farseer.Common.toast(JSON.stringify({'content':params}), function(){});});
+```
 
  
