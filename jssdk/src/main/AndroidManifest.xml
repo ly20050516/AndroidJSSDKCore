@@ -15,11 +15,10 @@
   ~    limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.farseer.jssdk.protocol">
+          package="com.farseer.jssdk">
 
     <application
             android:allowBackup="true"
-            android:label="@string/app_name"
             android:supportsRtl="true">
         <activity android:name="com.farseer.jssdk.WebActivity">
         </activity>

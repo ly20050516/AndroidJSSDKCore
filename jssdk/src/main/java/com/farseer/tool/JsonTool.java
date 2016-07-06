@@ -35,20 +35,37 @@ public class JsonTool {
     private static final Gson mGson = new GsonBuilder().create();
 
     //JSONUtils.fromJsonString(json, new TypeToken<T>() {}.getType());
+
+    /**
+     * json字符串转换成对象.
+     *
+     * @param json    json字符串
+     * @param typeOfT 对象类型
+     * @param <T>     对象泛型
+     *
+     * @return 对象
+     */
     public static <T> T fromJsonString(String json, Type typeOfT) {
         try {
             return mGson.fromJson(json, typeOfT);
         } catch (JsonSyntaxException e) {
-            e.printStackTrace();
+            LogTool.error(e.getMessage());
         }
         return null;
     }
 
+    /**
+     * 把对象序列化成json字符串.
+     *
+     * @param object 对象
+     *
+     * @return json字符串
+     */
     public static String toJsonString(Object object) {
         try {
             return mGson.toJson(object);
         } catch (Throwable e) {
-            e.printStackTrace();
+            LogTool.error(e.getMessage());
         }
         return "";
     }

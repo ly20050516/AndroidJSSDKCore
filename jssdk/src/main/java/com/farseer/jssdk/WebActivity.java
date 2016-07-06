@@ -16,15 +16,14 @@
 
 package com.farseer.jssdk;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.farseer.jssdk.protocol.R;
 
-public class WebActivity extends AppCompatActivity {
+public class WebActivity extends Activity {
 
-    public static String EXTRA_URL = "extra_url";
+    public final static String EXTRA_URL = "extra_url";
     JSSDK jssdk = null;
 
     public static void openWebActivity(Context context, String url) {
@@ -36,7 +35,7 @@ public class WebActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_web);
+        setContentView(R.layout.core_activity_web);
 
         JSWebView jsWebView = (JSWebView) findViewById(R.id.jsWebView);
 
@@ -50,7 +49,7 @@ public class WebActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         jssdk.unregister();
+        super.onDestroy();
     }
 }

@@ -19,13 +19,16 @@
 buildscript {
     repositories {
         jcenter()
-        // 远程私库
+        //私库
         maven {
             url "http://121.43.96.78:8081/nexus/content/groups/public/"
         }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
+
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

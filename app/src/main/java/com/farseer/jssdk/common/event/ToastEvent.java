@@ -43,7 +43,7 @@ public class ToastEvent extends JSEvent {
         log(json);
         data = JsonTool.fromJsonString(json, new TypeToken<Data>() {}.getType());
         if (data == null || !data.check()) {
-            LogTool.error(String.format("toast 's params of the module are not support", getModule()));
+            LogTool.error(String.format("toast 's params of the module named %s are not support", getModule()));
         }
     }
 

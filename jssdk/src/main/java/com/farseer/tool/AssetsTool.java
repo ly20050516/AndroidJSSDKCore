@@ -33,28 +33,39 @@ public class AssetsTool {
 
     private static final String TAG = AssetsTool.class.getSimpleName();
 
+    /**
+     * 获得assets中文件filename中的文本内容.
+     *
+     * @param context  context
+     * @param fileName 文件名称
+     *
+     * @return 文件文本内容
+     */
     public static String getText(Context context, String fileName) {
         try {
             InputStreamReader inputReader = new InputStreamReader(context.getResources().getAssets().open(fileName));
             BufferedReader bufReader = new BufferedReader(inputReader);
             String line = "";
             String text = "";
-            while ((line = bufReader.readLine()) != null)
+            while ((line = bufReader.readLine()) != null) {
                 text += line;
+            }
             return text;
         } catch (Exception e) {
-            e.printStackTrace();
+            LogTool.error(e.getMessage());
         }
         return null;
     }
 
     /**
-     * 拷贝Asset下文件
+     * 拷贝Asset下文件.
      *
+     * @param context context
      * @param dir      文件所在目录,dir==null表示根目录
-     * @param fileName
-     * @param outDir
-     * @return
+     * @param fileName 文件名称
+     * @param outDir   输出目录
+     *
+     * @return  拷贝是否成功
      */
     public static boolean copyAssetFile(Context context, String dir, String fileName, String outDir) {
         InputStream in = null;
@@ -104,11 +115,13 @@ public class AssetsTool {
     }
 
     /**
-     * 拷贝Asset下目录
+     * 拷贝Asset下目录.
      *
-     * @param assetDir
-     * @param outDir
-     * @return
+     * @param context  context
+     * @param assetDir assets目录
+     * @param outDir   输出目录
+     *
+     * @return 拷贝是否成功
      */
     public static boolean copyAssetFile(Context context, String assetDir, String outDir) {
         InputStream in = null;

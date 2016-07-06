@@ -31,7 +31,7 @@ public class JsFormator {
     }
 
     /**
-     * 获得生成命名空间方法的javascript
+     * 获得生成命名空间方法的javascript.
      *
      * if (typeof Namespace == "undefined") {
      *     var Namespace = new Object();
@@ -43,7 +43,7 @@ public class JsFormator {
      *         var ns = "";
      *         for (var i = 0; i < arr.length; i++) {
      *             if (i > 0) {
-     *             ns += ".";
+     *                 ns += ".";
      *             }
      *             ns += arr[i];
      *             eval("if(typeof(" + ns + ") == 'undefined') " + ns + " = new Object();");
@@ -53,7 +53,7 @@ public class JsFormator {
      *
      * Namespace.register("com.farseer");
      *
-     * @return
+     * @return 生成命名空间方法的javascript
      */
     public static String getNamespaceJavascript() {
 
@@ -76,7 +76,7 @@ public class JsFormator {
     }
 
     /**
-     * 获得执行注册命名空间的javascript
+     * 获得执行注册命名空间的javascript.
      *
      * 例如:
      * Namespace.register('ITOMIX.Dialog');
@@ -85,7 +85,9 @@ public class JsFormator {
      * }
      *
      * @param namespace     命名空间
-     * @return
+     * @param moduleName    模块名称
+     *
+     * @return 注册命名空间的javascript
      */
     public static String getRegisterNamespaceJavascript(String namespace, String moduleName) {
         // CommonCallbackCache
@@ -97,7 +99,7 @@ public class JsFormator {
     }
 
     /**
-     * 获得注入js方法的javascript
+     * 获得注入js方法的javascript.
      *
      * 例如:
      * if (typeof cn.farseer.Common.toast == 'undefined') {
@@ -112,7 +114,8 @@ public class JsFormator {
      * @param namespace         命名空间
      * @param moduleName        模块名称
      * @param functionName      js方法名称
-     * @return
+     *
+     * @return 注入js方法的javascript
      */
     public static String getJsFunctionInitJavascript(String namespace, String moduleName, String functionName) {
 
@@ -135,7 +138,7 @@ public class JsFormator {
     }
 
     /**
-     * 获得执行callback方法的javascript
+     * 获得执行callback方法的javascript.
      *
      * 例如:
      * if (typeof Common_callbacks['toast'] != "undefined") {
@@ -146,7 +149,8 @@ public class JsFormator {
      * @param moduleName        模块名称
      * @param functionName      js方法名称
      * @param  json             回调参数,数据格式为json
-     * @return
+     *
+     * @return callback方法的javascript
      */
     public static String getCallbackJavascript(String moduleName, String functionName, String json) {
         // CommonCallbackCache
@@ -158,14 +162,15 @@ public class JsFormator {
     }
 
     /**
-     * 获得js方法的完整名称
+     * 获得js方法的完整名称.
      *
      * 例如:com.farseer.Common.toast
      *
      * @param namespace         命名空间
      * @param moduleName        模块名称
      * @param functionName      js方法名称
-     * @return
+     *
+     * @return js方法的完整名称.
      */
     private static String getJsVariableName(String namespace, String moduleName, String functionName) {
         StringBuilder builder = new StringBuilder();
@@ -178,12 +183,13 @@ public class JsFormator {
     }
 
     /**
-     * 获得js callback变量名称
+     * 获得js callback变量名称.
      *
      * 例如: CommonCallbackCache
      *
      * @param moduleName 模块名称
-     * @return
+     *
+     * @return js callback变量名称
      */
     private static String getJsCallbackCacheName(String moduleName) {
         StringBuilder builder = new StringBuilder();
@@ -194,13 +200,14 @@ public class JsFormator {
     }
 
     /**
-     * 获得本地方法完整名称
+     * 获得本地方法完整名称.
      *
      * 例如:Common.toast
      *
      * @param moduleName        模块名称
-     * @param functionName      js方法名称
-     * @return
+     * @param functionName      js方法名称\
+     *
+     * @return 本地方法完整名称
      */
     private static String getNativeFunctionName(String moduleName, String functionName) {
         StringBuilder builder = new StringBuilder();

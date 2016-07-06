@@ -48,7 +48,7 @@ public class OpenPageEvent extends JSEvent {
         data = JsonTool.fromJsonString(json, new TypeToken<Data>() {
         }.getType());
         if (data == null || !data.check()) {
-            LogTool.error(String.format("openPage 's params of the module are not support", getModule()));
+            LogTool.error(String.format("openPage 's params of the module named %s are not support", getModule()));
         }
     }
 

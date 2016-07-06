@@ -138,11 +138,11 @@ public class SDKCacheManager {
             }
             return classList;
         } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
+            LogTool.error(e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            LogTool.error(e.getMessage());
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            LogTool.error(e.getMessage());
         }
         return null;
     }
@@ -170,13 +170,13 @@ public class SDKCacheManager {
                 moduleList.add(jsModule);
                 LogTool.error("successful inject module: " + moduleName + ", namespace = " + namespace);
             } catch (IllegalAccessException e) {
-                e.printStackTrace();
+                LogTool.error(e.getMessage());
             } catch (InstantiationException e) {
-                e.printStackTrace();
+                LogTool.error(e.getMessage());
             } catch (InvocationTargetException e) {
-                e.printStackTrace();
+                LogTool.error(e.getMessage());
             } catch (NoSuchMethodException e) {
-                e.printStackTrace();
+                LogTool.error(e.getMessage());
             }
         }
 
@@ -195,13 +195,13 @@ public class SDKCacheManager {
                 processorList.add(jsProcessor);
                 LogTool.error("successful inject processor: " + name);
             } catch (IllegalAccessException e) {
-                e.printStackTrace();
+                LogTool.error(e.getMessage());
             } catch (InstantiationException e) {
-                e.printStackTrace();
+                LogTool.error(e.getMessage());
             } catch (InvocationTargetException e) {
-                e.printStackTrace();
+                LogTool.error(e.getMessage());
             } catch (NoSuchMethodException e) {
-                e.printStackTrace();
+                LogTool.error(e.getMessage());
             }
         }
 

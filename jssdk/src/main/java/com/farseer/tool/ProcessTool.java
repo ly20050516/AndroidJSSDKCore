@@ -36,6 +36,7 @@ public final class ProcessTool {
      * 获得进程名称.
      *
      * @param context 上下文
+     *
      * @return 获得进程名称
      */
     public static String getProcessName(Context context) {
